@@ -1,23 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Settings from "./components/Settings/Settings";
+import Timer from "./components/Timer/Timer";
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
+import SwitcherMode from "./components/SwitcherMode/SwitcherMode";
+import Author from "./components/Author/Author";
+
+import defaultImg from "./assets/img/exmpl.jpg";
+import defaultSong from "./assets/audio/wunsche_birds.mp3";
 
 function App() {
+  const [currentImg, setCurrentImg] = useState(defaultImg);
+
+  const handleImgLodaed = (image) => {
+    setCurrentImg(image);
+  };
+
+  const [value, setValue] = useState(false);
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${currentImg})`,
+      }}
+    >
+      <div className="contentWrapper">
+        {/* select visible element */}
+        <SwitcherMode onChange={handleChange} />
+
+        {/* main content */}
+        {/* style used to prevent unmounting elements */}
+        <main>
+          <div
+            style={{
+              visibility: value ? "hidden" : "visible",
+              position: value ? "absolute" : "inherit",
+            }}
+          >
+            <Timer />
+          </div>
+          <div
+            style={{
+              visibility: !value ? "hidden" : "visible",
+              position: !value ? "absolute" : "inherit",
+            }}
+          >
+            <AudioPlayer audioSrc={defaultSong} />
+          </div>
+        </main>
+
+        <p>footer</p>
+      </div>
+      <Author />
+      <Settings BackgroundImgCallback={handleImgLodaed} />
     </div>
   );
 }
