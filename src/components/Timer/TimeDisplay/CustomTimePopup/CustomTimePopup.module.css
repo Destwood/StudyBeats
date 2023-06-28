@@ -19,10 +19,6 @@
   border-radius: 1rem;
 }
 
-.popupContent {
-  margin-bottom: 10px;
-}
-
 .popupTitle {
   font-size: 1.3rem;
   padding: 15px 25px;
@@ -36,4 +32,34 @@
   margin: 2rem 0;
   font-weight: 1000;
   justify-content: space-around;
+}
+
+.label {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.popupInput {
+  max-width: 5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  font-size: 1.3rem;
+  padding: 15px 25px;
+  border-radius: 15px;
+  color: #212121;
+  background: #e8e8e8;
+  font-weight: 1000;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+.button:hover {
+  color: #e8e8e8;
+  cursor: pointer;
+  background-color: #212121;
 }

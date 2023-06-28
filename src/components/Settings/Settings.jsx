@@ -13,6 +13,10 @@ function Settings({ BackgroundImgCallback }) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const report = () => {
+    alert("Contuct us in discord => Destwood");
+  };
+
   return (
     <div className={style.settings}>
       <button
@@ -32,7 +36,9 @@ function Settings({ BackgroundImgCallback }) {
             <button className={style.menuButton}>Playlist</button>
           </li>
           <li className={style.menuItem}>
-            <button className={style.menuButton}>Report</button>
+            <button className={style.menuButton} onClick={report}>
+              Report
+            </button>
           </li>
         </ul>
       )}
