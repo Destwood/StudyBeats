@@ -39,7 +39,7 @@ const AudioPlayer = ({ audioSrc }) => {
   return (
     <div className={style.wrapper}>
       <div className={style.AudioPlayer}>
-        {/* <button className={style.playButton} onClick={togglePlay}>
+        <button className={style.playButton} onClick={togglePlay}>
           <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
         </button>
         <div>
@@ -50,16 +50,7 @@ const AudioPlayer = ({ audioSrc }) => {
             ref={progressRef}
             className={style.progress}
           />
-        </div> */}
-        <iframe
-          className={style.spotifyPlayer}
-          src="https://open.spotify.com/embed/playlist/75zNFVHwxiMEwecjLPfFEK?utm_source=generator"
-          volume="0.2"
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-          loading="lazy"
-        ></iframe>
+        </div>
         <audio ref={audioRef} src={audioSrc} />
       </div>
     </div>
