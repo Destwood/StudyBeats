@@ -5,7 +5,7 @@ function Author() {
   const [showNotification, setShowNotification] = useState(false);
 
   const handleClick = () => {
-    navigator.clipboard.writeText("Destwood");
+    navigator.clipboard.writeText("https://github.com/Destwood/StudyBeats");
 
     setShowNotification(true);
 
@@ -21,7 +21,7 @@ function Author() {
 
       {showNotification && (
         <div className={style.notification}>
-          <p>discord copied</p>
+          <p>Source copied</p>
         </div>
       )}
     </div>
