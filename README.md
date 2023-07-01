@@ -18,10 +18,11 @@ To install and run the project, follow these steps:
 - Run the command npm install to install the dependencies.
 - After the installation is complete, run the command npm start to start the development server.
 - Open your web browser and go to http://localhost:3000 to access the application.
-- Usage
 
 
-# Once the application is running, you can interact with the different features:
+# Usage
+
+Once the application is running, you can interact with the different features:
 
 - Timer: Set the desired time and click the "Start" button to begin the countdown.
 - Stopwatch: Click the "Start" button to start the stopwatch. Click the "Stop" button to pause it.
