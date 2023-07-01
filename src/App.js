@@ -57,10 +57,14 @@ function App() {
           </div>
         </main>
 
-        <p>footer</p>
+        <div>
+          <Author />
+          <Settings
+            BackgroundImgCallback={handleImgLodaed}
+            reset={handleReset}
+          />
+        </div>
       </div>
-      <Author />
-      <Settings BackgroundImgCallback={handleImgLodaed} reset={handleReset} />
     </div>
   );
 }

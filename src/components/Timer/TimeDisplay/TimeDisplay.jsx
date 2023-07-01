@@ -4,9 +4,7 @@ import style from "./TimeDisplay.module.css";
 
 const TimeDisplay = ({
   time,
-  resetTime,
   resetCount,
-  customTime,
   handleCustomTime,
   isTimerFinished,
 }) => {
@@ -15,7 +13,7 @@ const TimeDisplay = ({
     minutes: 0,
     seconds: 0,
   });
-  const [showPopup, setShowPopup] = useState(false);
+  const [isPopupVisible, setPopupVisible] = useState(false);
   const popupRef = useRef(null);
 
   useEffect(() => {
@@ -32,34 +30,32 @@ const TimeDisplay = ({
 
   useEffect(() => {
     if (isTimerFinished) {
-      setShowPopup(false); // Если таймер достиг 00:00, закрываем попап
+      setPopupVisible(false);
     }
   }, [isTimerFinished]);
 
   const handleTimeClick = () => {
-    setShowPopup(true);
+    setPopupVisible(!isPopupVisible);
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false);
+    setPopupVisible(false);
   };
 
   useEffect(() => {
-    if (resetCount > 0) {
-      setDisplayTime({ hours: 0, minutes: 0, seconds: 0 });
-    }
-  }, [resetCount]);
-
-  useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        setShowPopup(false);
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target) &&
+        !event.target.classList.contains(style.time)
+      ) {
+        handlePopupClose();
       }
     };
 
     const handleEscape = (event) => {
       if (event.keyCode === 27) {
-        setShowPopup(false);
+        handlePopupClose();
       }
     };
 
@@ -71,6 +67,12 @@ const TimeDisplay = ({
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
+
+  useEffect(() => {
+    if (resetCount > 0) {
+      setDisplayTime({ hours: 0, minutes: 0, seconds: 0 });
+    }
+  }, [resetCount]);
 
   return (
     <div className={`${style.time}`} onClick={handleTimeClick}>
@@ -87,11 +89,10 @@ const TimeDisplay = ({
         </span>
       )}
       <CustomTimePopup
-        showPopup={showPopup}
+        isPopupVisible={isPopupVisible}
         popupRef={popupRef}
-        handleCustomTime={handleCustomTime}
-        handlePopupClose={handlePopupClose}
-        isTimerFinished={isTimerFinished} // Передаем состояние isTimerFinished в попап
+        handleSetCustomTime={handleCustomTime}
+        handleCancel={handlePopupClose}
       />
     </div>
   );

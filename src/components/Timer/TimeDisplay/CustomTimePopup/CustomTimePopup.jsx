@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import style from "./CustomTimePopup.module.css";
 
 const CustomTimePopup = ({
-  showPopup,
+  isPopupVisible,
   popupRef,
-  handleCustomTime,
-  handlePopupClose,
+  handleSetCustomTime,
+  handleCancel,
 }) => {
   const [inputMinutes, setInputMinutes] = useState(0);
 
@@ -13,24 +13,23 @@ const CustomTimePopup = ({
     setInputMinutes(parseInt(event.target.value, 10));
   };
 
-  const handleSetCustomTime = () => {
-    handleCustomTime(inputMinutes);
-    setInputMinutes(0); // Сброс значения inputMinutes
+  const handleSetCustomTimeClick = () => {
+    handleSetCustomTime(inputMinutes);
+    setInputMinutes(0); // Скидання значення inputMinutes
   };
 
-  const handleCancel = () => {
-    handlePopupClose();
-    setInputMinutes(0); // Сброс значения inputMinutes
+  const handlePopupClick = (event) => {
+    event.stopPropagation(); // Зупинка подальшого поширення кліку на батьківські елементи
   };
 
   return (
-    showPopup && (
+    isPopupVisible && (
       <div className={style.popupOverlay}>
-        <div className={style.popup} ref={popupRef}>
-          <h3 className={style.popupTitle}>Enter Custom Time</h3>
+        <div className={style.popup} ref={popupRef} onClick={handlePopupClick}>
+          <h3 className={style.popupTitle}>Enter custom time</h3>
 
           <div className={style.inputGroup}>
-            <label className={style.label}>Minutes:</label>
+            <label className={style.label}>minutes:</label>
             <input
               type="text"
               name="minutes"
@@ -38,15 +37,16 @@ const CustomTimePopup = ({
               value={inputMinutes}
               onChange={handleInputChange}
               maxLength={4}
+              placeholder="input your time"
             />
           </div>
 
           <div className={style.buttons}>
             <button
-              onClick={handleSetCustomTime}
+              onClick={handleSetCustomTimeClick}
               className={`${style.setButton} ${style.button}`}
             >
-              Set Custom Time
+              Set
             </button>
             <button
               onClick={handleCancel}
