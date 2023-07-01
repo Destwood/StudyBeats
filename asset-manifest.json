@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/StudyBeats/static/css/main.bdf611bb.css",
+    "main.js": "/StudyBeats/static/js/main.d6def64d.js",
+    "static/media/wunsche_birds.mp3": "/StudyBeats/static/media/wunsche_birds.e7f2c200e90bb037dcf0.mp3",
+    "static/media/exmpl.jpg": "/StudyBeats/static/media/exmpl.c629a813b3561cfa40dd.jpg",
+    "index.html": "/StudyBeats/index.html",
+    "main.bdf611bb.css.map": "/StudyBeats/static/css/main.bdf611bb.css.map",
+    "main.d6def64d.js.map": "/StudyBeats/static/js/main.d6def64d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdf611bb.css",
+    "static/js/main.d6def64d.js"
+  ]
+}
