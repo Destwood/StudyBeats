@@ -1,4 +1,4 @@
-## This is a React project that includes a timer, stopwatch, background settings, audio player, and author information.
+This is a React project that includes a timer, stopwatch, background settings, audio player, and author information.
 
 # Features
 Timer: Allows you to set a specific time and count down.
