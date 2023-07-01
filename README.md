@@ -10,7 +10,7 @@ This is a React project that includes a timer, stopwatch, background settings, a
 
 # Installation
 
-## To install and run the project, follow these steps:
+To install and run the project, follow these steps:
 
 - Clone the repository to your local machine.
 - Make sure you have Node.js installed.
