@@ -12,6 +12,9 @@ import defaultSong from "./assets/audio/wunsche_birds.mp3";
 function App() {
   const [currentImg, setCurrentImg] = useState(defaultImg);
 
+  const handleReset = () => {
+    setCurrentImg(defaultImg);
+  };
   const handleImgLodaed = (image) => {
     setCurrentImg(image);
   };
@@ -57,7 +60,7 @@ function App() {
         <p>footer</p>
       </div>
       <Author />
-      <Settings BackgroundImgCallback={handleImgLodaed} />
+      <Settings BackgroundImgCallback={handleImgLodaed} reset={handleReset} />
     </div>
   );
 }

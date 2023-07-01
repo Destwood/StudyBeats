@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import style from "./BackgroundLoader.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

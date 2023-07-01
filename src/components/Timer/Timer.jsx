@@ -11,6 +11,9 @@ const Timer = () => {
   const [resetCount, setResetCount] = useState(0);
   const [customTime, setCustomTime] = useState(0);
   const [isTimerFinished, setIsTimerFinished] = useState(false);
+  let isDisabled = false;
+  let isStopwatchCustom = time > 0 && customTime && !isTimerMode;
+  let isTimerZero = time === 0 && isTimerMode;
 
   useEffect(() => {
     let interval = null;
@@ -60,9 +63,12 @@ const Timer = () => {
   const handleCustomTime = (minutes) => {
     setTime(minutes * 60);
     setCustomTime(minutes);
-    setIsRunning(true);
     setIsTimerFinished(false);
   };
+
+  if (isStopwatchCustom || isTimerZero) {
+    isDisabled = true;
+  }
 
   return (
     <div className={style.timer}>
@@ -82,6 +88,7 @@ const Timer = () => {
         isRunning={isRunning}
         handleToggle={handleToggle}
         handleReset={handleReset}
+        isDisabled={isDisabled}
       />
     </div>
   );

@@ -32,11 +32,12 @@ const CustomTimePopup = ({
           <div className={style.inputGroup}>
             <label className={style.label}>Minutes:</label>
             <input
-              type="number"
+              type="text"
               name="minutes"
               className={style.popupInput}
               value={inputMinutes}
               onChange={handleInputChange}
+              maxLength={4}
             />
           </div>
 

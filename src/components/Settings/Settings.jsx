@@ -4,9 +4,12 @@ import style from "./Settings.module.css";
 import BackgroundLoader from "../BackgroundLoader/BackgroundLoader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
-
-function Settings({ BackgroundImgCallback }) {
+import {
+  faCog,
+  faWarning,
+  faArrowRotateLeft,
+} from "@fortawesome/free-solid-svg-icons";
+function Settings({ BackgroundImgCallback, reset }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -14,7 +17,7 @@ function Settings({ BackgroundImgCallback }) {
   };
 
   const report = () => {
-    alert("Contuct us in discord => Destwood");
+    alert("Contuct us in discord => https://discord.gg/v6tzqrvE");
   };
 
   return (
@@ -33,11 +36,15 @@ function Settings({ BackgroundImgCallback }) {
             </button>
           </li>
           <li className={style.menuItem}>
-            <button className={style.menuButton}>Playlist</button>
+            <button className={style.menuButton} onClick={report}>
+              <FontAwesomeIcon icon={faWarning} />
+              Report
+            </button>
           </li>
           <li className={style.menuItem}>
-            <button className={style.menuButton} onClick={report}>
-              Report
+            <button className={style.menuButton} onClick={reset}>
+              <FontAwesomeIcon icon={faArrowRotateLeft} />
+              Reset
             </button>
           </li>
         </ul>
