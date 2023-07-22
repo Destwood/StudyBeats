@@ -5,6 +5,7 @@ import Timer from "./components/Timer/Timer";
 import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 import SwitcherMode from "./components/SwitcherMode/SwitcherMode";
 import Author from "./components/Author/Author";
+import Tasks from "./components/Tasks/Tasks";
 
 import defaultImg from "./assets/img/exmpl.jpg";
 import defaultSong from "./assets/audio/wunsche_birds.mp3";
@@ -56,7 +57,7 @@ function App() {
             <AudioPlayer audioSrc={defaultSong} />
           </div>
         </main>
-
+        <Tasks />
         <p>footer</p>
       </div>
       <Author />
