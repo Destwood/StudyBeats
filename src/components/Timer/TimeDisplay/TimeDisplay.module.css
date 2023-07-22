@@ -1,0 +1,10 @@
+.time {
+  margin: 3rem 0;
+  font-weight: 7000;
+  font-size: 5rem;
+  color: #fff;
+}
+.time:hover {
+  cursor: pointer;
+  color: #b7b7b7;
+}

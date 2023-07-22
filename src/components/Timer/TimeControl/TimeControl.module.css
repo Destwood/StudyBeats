@@ -1,0 +1,30 @@
+.timeControl {
+}
+
+.timeControlContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+}
+
+.reset {
+  cursor: pointer;
+  font-size: 3rem;
+  color: white;
+}
+
+.reset:hover {
+  color: #b7b7b7;
+}
+/* .reset:hover {
+  animation: rotateOnce 0.7s ease-in-out 1;
+}
+
+@keyframes rotateOnce {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+} */
