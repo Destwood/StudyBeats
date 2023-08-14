@@ -65,7 +65,7 @@ function App() {
             reset={handleReset}
           />
         </div>
-        <p>footer</p>
+        <footer>footer</footer>
       </div>
     </div>
   );

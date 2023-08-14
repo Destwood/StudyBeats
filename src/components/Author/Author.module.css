@@ -30,3 +30,9 @@
   cursor: auto;
   user-select: none;
 }
+
+@media (max-width: 786px) {
+  .name {
+    font-size: 1.6rem;
+  }
+}

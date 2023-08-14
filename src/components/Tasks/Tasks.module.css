@@ -130,3 +130,9 @@
   border: 1px solid #848484;
   pointer-events: none;
 }
+
+@media (max-width: 786px) {
+  .Tasks {
+    display: none;
+  }
+}

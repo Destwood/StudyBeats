@@ -1,11 +1,6 @@
 .wrapper {
-  width: 22rem;
-  height: 30rem;
   border-radius: 2rem;
-
-  /* background-color: rgba(255, 255, 255, 0.123); */
   background-color: rgba(255, 255, 255, 0.128);
-
   display: flex;
   justify-content: center;
   align-items: center;

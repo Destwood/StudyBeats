@@ -1,8 +1,8 @@
 .settings {
   display: block;
   position: fixed;
-  bottom: 2rem;
-  right: 5rem;
+  bottom: 1rem;
+  right: 1rem;
   color: #fff;
 }
 
@@ -93,4 +93,14 @@
 
 .tooltip {
   display: none;
+}
+@media (max-width: 786px) {
+  .settingsMenu {
+    background: linear-gradient(
+      to right,
+      rgba(33, 33, 33, 0),
+      #212121,
+      #212121
+    );
+  }
 }
