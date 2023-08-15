@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+
+.authorWrapper {
+  color: #fff;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  cursor: pointer;
+}
+
+.name {
+  font-family: "Fasthand", cursive;
+}
+
+.name:hover {
+  color: #fbffb0;
+}
+
+.notification {
+  position: fixed;
+  font-size: 1rem;
+  bottom: 2rem;
+  right: 10rem;
+  background-color: #0000002e;
+  border-radius: 1rem;
+  line-height: 1rem;
+  padding: 1rem;
+  z-index: 1;
+  cursor: auto;
+  user-select: none;
+}
+
+@media (max-width: 786px) {
+  .name {
+    font-size: 1.6rem;
+  }
+}
