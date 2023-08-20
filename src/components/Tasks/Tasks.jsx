@@ -33,6 +33,7 @@ function Tasks() {
             className={style.input}
             id="task"
             onKeyDown={handleKeyPress}
+            placeholder="new task..."
           />
           <button className={style.button} onClick={addItem}>
             +
@@ -64,7 +65,7 @@ function Tasks() {
               List.length === 0 ? style.disabled : ""
             }`}
           >
-            X
+            x
           </button>
         </div>
       </div>

@@ -53,7 +53,13 @@
   max-width: 60%;
 }
 
-.input:focus {
+.input::placeholder {
+  font-weight: 500;
+  content: "new task...";
+}
+
+.input:focus::placeholder {
+  color: transparent;
 }
 
 /* List */
@@ -68,12 +74,14 @@
 .listItem {
   display: flex;
   margin-bottom: 1rem;
-  border-right: 1px solid #0000006d;
 }
 
 .listItem:hover {
-  color: #595959;
   cursor: pointer;
+}
+
+.listItemContent:hover {
+  color: #a1a1a1;
 }
 
 .list {
@@ -112,9 +120,7 @@
   width: 2rem;
   height: 2rem;
   font-size: 2rem;
-  font-weight: 700;
   padding: 5px;
-  border: 2px solid #000;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -122,12 +128,10 @@
 .button:hover {
   cursor: pointer;
   color: #848484;
-  border: 2px solid #848484;
 }
 
 .disabled {
   color: #848484;
-  border: 1px solid #848484;
   pointer-events: none;
 }
 
